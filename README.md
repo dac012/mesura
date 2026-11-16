@@ -10,6 +10,7 @@ Mindful calorie and nutrition tracking — a progressive web app that works on m
 - [Vite](https://vite.dev/)
 - [React Router](https://reactrouter.com/) for navigation between screens
 - CSS Modules for component-scoped styles, [Lucide](https://lucide.dev/) icons
+- [i18next](https://www.i18next.com/) for translations, Intl for date and number formatting
 - [Oxlint](https://oxc.rs/) and [Prettier](https://prettier.io/)
 
 ## Getting started
