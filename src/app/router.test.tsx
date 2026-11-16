@@ -49,7 +49,7 @@ describe('app navigation', () => {
       'aria-current',
       'page',
     )
-    // "/" is a prefix of every URL; the diary link must not stay active
+    // "/" is a prefix of every URL, yet the diary link must not stay active
     expect(nav.getByRole('link', { name: t('nav.diary') })).not.toHaveAttribute(
       'aria-current',
     )

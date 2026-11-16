@@ -34,11 +34,11 @@ export function NavBar() {
         {navItems.map(({ to, labelKey, Icon }) => (
           <li key={to}>
             {/* NavLink rather than Link: it marks the active section, also for
-                screen readers (aria-current). `end` is needed because "/" is
-                a prefix of every URL, so the diary would always look active. */}
+                screen readers (aria-current). No `end` prop on purpose: deeper
+                URLs such as /foods/123 must keep their section highlighted.
+                React Router already keeps "/" from matching every URL. */}
             <NavLink
               to={to}
-              end
               className={({ isActive }) =>
                 isActive ? `${styles.link} ${styles.active}` : styles.link
               }
