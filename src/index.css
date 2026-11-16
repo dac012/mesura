@@ -1,9 +1,68 @@
-/* Minimal base styles. A proper design system arrives in phase A2. */
+/*
+ * Global styles and design tokens.
+ * Components use these CSS variables instead of hard-coded values, so the
+ * look of the whole app (and its dark mode) can be changed from one place.
+ */
+
 :root {
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* Colors (light theme) */
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-text: #1c1c1a;
+  --color-text-muted: #6b6b66;
+  --color-border: #e2e2dd;
+  --color-primary: #2f7d5b;
+  --color-primary-soft: #e3f1ea;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Typography */
+  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-xl: 1.5rem;
+
+  /* Shapes */
+  --radius-md: 0.75rem;
+
+  /* Layout */
+  --nav-bottom-height: 4rem;
+  --nav-side-width: 14rem;
+
+  font-family: var(--font-sans);
   color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* Colors (dark theme), applied when the device uses dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #141513;
+    --color-surface: #1e1f1c;
+    --color-text: #ecece8;
+    --color-text-muted: #a1a19b;
+    --color-border: #2f302c;
+    --color-primary: #5cc193;
+    --color-primary-soft: #1d3329;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
 }
