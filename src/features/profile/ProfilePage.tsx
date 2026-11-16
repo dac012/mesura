@@ -1,11 +1,13 @@
-import { texts } from '../../shared/texts'
+import { useTranslation } from 'react-i18next'
 import { Page } from '../../shared/ui/Page'
 
 // Placeholder screen; real content arrives in a later phase.
 export function ProfilePage() {
+  const { t } = useTranslation()
+
   return (
-    <Page title={texts.pages.profile.title}>
-      <p>{texts.pages.profile.placeholder}</p>
+    <Page title={t('pages.profile.title')}>
+      <p>{t('pages.profile.placeholder')}</p>
     </Page>
   )
 }
