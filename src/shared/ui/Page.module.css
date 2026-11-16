@@ -4,7 +4,17 @@
   margin: 0 auto;
 }
 
+.header {
+  margin-bottom: var(--space-4);
+}
+
 .title {
-  margin: 0 0 var(--space-4);
+  margin: 0;
   font-size: var(--font-size-xl);
+}
+
+.subtitle {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
 }
