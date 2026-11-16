@@ -1,0 +1,102 @@
+/* Phones (default): fixed bar at the bottom of the screen */
+.nav {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 10;
+  /* Extra space so the iPhone home indicator does not cover the icons */
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.brand {
+  display: none;
+}
+
+.list {
+  display: flex;
+  height: var(--nav-bottom-height);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list > li {
+  flex: 1;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  height: 100%;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -4px;
+  border-radius: var(--radius-md);
+}
+
+.active,
+.active:hover {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Tablets and computers: sidebar on the left.
+   768px must match the breakpoint in AppLayout.module.css
+   (CSS variables cannot be used inside media queries). */
+@media (min-width: 768px) {
+  .nav {
+    position: sticky;
+    inset: auto;
+    top: 0;
+    width: var(--nav-side-width);
+    height: 100dvh;
+    padding: var(--space-6) var(--space-3);
+    border-top: none;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .brand {
+    display: block;
+    padding: 0 var(--space-3) var(--space-6);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .list {
+    flex-direction: column;
+    gap: var(--space-1);
+    height: auto;
+  }
+
+  .link {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    font-size: var(--font-size-md);
+    border-radius: var(--radius-md);
+  }
+
+  .link:hover {
+    background-color: var(--color-bg);
+  }
+
+  .active,
+  .active:hover {
+    background-color: var(--color-primary-soft);
+  }
+}

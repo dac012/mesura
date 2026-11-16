@@ -1,0 +1,22 @@
+.layout {
+  min-height: 100dvh;
+}
+
+/* Phones: leave room at the bottom so the fixed menu never hides content */
+.content {
+  padding-bottom: calc(var(--nav-bottom-height) + env(safe-area-inset-bottom));
+}
+
+/* Tablets and computers: menu and content side by side.
+   768px must match the breakpoint in NavBar.module.css. */
+@media (min-width: 768px) {
+  .layout {
+    display: flex;
+  }
+
+  .content {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 0;
+  }
+}
