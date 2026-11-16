@@ -12,6 +12,7 @@ Mindful calorie and nutrition tracking — a progressive web app that works on m
 - CSS Modules for component-scoped styles, [Lucide](https://lucide.dev/) icons
 - [i18next](https://www.i18next.com/) for translations, Intl for date and number formatting
 - [Oxlint](https://oxc.rs/) and [Prettier](https://prettier.io/)
+- [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/) for tests
 
 ## Getting started
 
@@ -29,6 +30,8 @@ npm run dev
 | `npm run dev`          | Start the development server         |
 | `npm run build`        | Type-check and build for production  |
 | `npm run preview`      | Preview the production build locally |
+| `npm test`             | Run the tests once                   |
+| `npm run test:watch`   | Re-run the tests on every file save  |
 | `npm run lint`         | Lint the code with Oxlint            |
 | `npm run format`       | Format all files with Prettier       |
 | `npm run format:check` | Check formatting without writing     |
