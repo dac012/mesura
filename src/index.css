@@ -1,0 +1,9 @@
+/* Minimal base styles. A proper design system arrives in phase A2. */
+:root {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+}
