@@ -8,6 +8,8 @@ Mindful calorie and nutrition tracking — a progressive web app that works on m
 
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev/)
+- [React Router](https://reactrouter.com/) for navigation between screens
+- CSS Modules for component-scoped styles, [Lucide](https://lucide.dev/) icons
 - [Oxlint](https://oxc.rs/) and [Prettier](https://prettier.io/)
 
 ## Getting started
