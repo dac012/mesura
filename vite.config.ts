@@ -11,5 +11,6 @@ export default defineConfig({
     // The app only ever runs in a browser, so tests run in a simulated one;
     // in plain Node, code touching `document` (like the i18n setup) breaks.
     environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
   },
 })
