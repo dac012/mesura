@@ -3,12 +3,13 @@ import styles from './Page.module.css'
 
 type PageProps = {
   title: string
-  // Optional secondary line shown under the title
   subtitle?: string
   children?: ReactNode
 }
 
-// Common wrapper for every screen: a heading plus the screen content.
+// Every screen goes through this wrapper so headings and spacing stay
+// consistent and each page has exactly one <h1>, which screen reader users
+// rely on to know where they are.
 export function Page({ title, subtitle, children }: PageProps) {
   return (
     <section className={styles.page}>

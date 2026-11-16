@@ -1,2 +1,4 @@
-# Keep LF line endings everywhere (matches Prettier's default)
+# Git on Windows would check files out with CRLF; forcing LF keeps diffs free
+# of line-ending noise and matches what Prettier writes, so `format:check`
+# passes the same on every OS.
 * text=auto eol=lf

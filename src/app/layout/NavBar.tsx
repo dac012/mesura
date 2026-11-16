@@ -8,7 +8,8 @@ import styles from './NavBar.module.css'
 
 type NavItem = {
   to: string
-  // Translation key of the link text (checked against es.json)
+  // The key, not the translated text: texts must be resolved while
+  // rendering, or they would not update when the language changes
   labelKey: ParseKeys
   Icon: LucideIcon
 }
@@ -21,8 +22,8 @@ const navItems: NavItem[] = [
   { to: paths.settings, labelKey: 'nav.settings', Icon: Settings },
 ]
 
-// Main menu. The same markup is shown as a bottom bar on phones and as
-// a sidebar on wider screens; only the CSS changes (see NavBar.module.css).
+// One menu restyled by CSS for each screen size, instead of two separate
+// components, so there is only one list of links to keep up to date.
 export function NavBar() {
   const { t } = useTranslation()
 
@@ -32,8 +33,9 @@ export function NavBar() {
       <ul className={styles.list}>
         {navItems.map(({ to, labelKey, Icon }) => (
           <li key={to}>
-            {/* NavLink knows when its URL is active and sets aria-current.
-                `end` stops "/" from matching every other URL. */}
+            {/* NavLink rather than Link: it marks the active section, also for
+                screen readers (aria-current). `end` is needed because "/" is
+                a prefix of every URL, so the diary would always look active. */}
             <NavLink
               to={to}
               end

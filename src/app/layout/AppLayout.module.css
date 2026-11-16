@@ -2,13 +2,14 @@
   min-height: 100dvh;
 }
 
-/* Phones: leave room at the bottom so the fixed menu never hides content */
+/* The bottom menu is position: fixed, so it takes no space in the page;
+   without this padding the end of every page would sit hidden behind it. */
 .content {
   padding-bottom: calc(var(--nav-bottom-height) + env(safe-area-inset-bottom));
 }
 
-/* Tablets and computers: menu and content side by side.
-   768px must match the breakpoint in NavBar.module.css. */
+/* 768px is repeated in NavBar.module.css because CSS variables cannot be
+   used inside media queries: change both together. */
 @media (min-width: 768px) {
   .layout {
     display: flex;
@@ -16,6 +17,8 @@
 
   .content {
     flex: 1;
+    /* Flex items refuse to shrink below their content by default; without
+       this, wide content (tables, charts) would push the page sideways. */
     min-width: 0;
     padding-bottom: 0;
   }

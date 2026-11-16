@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Page } from '../../shared/ui/Page'
 
-// Placeholder screen; real content arrives in a later phase.
+// Intentionally empty for now: the section exists so navigation can be
+// built and tested before the feature itself.
 export function ProfilePage() {
   const { t } = useTranslation()
 

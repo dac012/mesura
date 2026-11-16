@@ -1,8 +1,10 @@
 import i18n from './i18n'
 
-// Locale-aware formatting built on the browser's Intl API. Each helper
-// uses the active app language by default, so 1234.5 shows as "1234,5" in
-// Spanish and "1,234.5" in English without any extra code in components.
+// Components call these helpers instead of toLocaleString() so numbers and
+// dates follow the app language (the one used for the texts), not whatever
+// language the browser happens to be in.
+// `locale` is a parameter, defaulting to the app language, so tests can check
+// any language without changing global state.
 
 export function formatNumber(
   value: number,

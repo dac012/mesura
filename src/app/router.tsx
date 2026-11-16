@@ -7,7 +7,11 @@ import { SettingsPage } from '../features/settings/SettingsPage'
 import { AppLayout } from './layout/AppLayout'
 import { paths } from './paths'
 
-// Every page is a child of AppLayout, so they all share the same shell.
+// A single route table (createBrowserRouter) rather than <Routes> spread
+// across components, so every URL in the app can be seen in one place.
+// Browser URLs (/foods) instead of hash URLs (/#/foods) look cleaner, but
+// the static host (GitHub Pages) must then serve index.html for any path,
+// or reloading on /foods returns a 404.
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -18,7 +22,8 @@ export const router = createBrowserRouter([
       { path: paths.history, Component: HistoryPage },
       { path: paths.profile, Component: ProfilePage },
       { path: paths.settings, Component: SettingsPage },
-      // Any unknown URL sends the user back to the diary
+      // Redirect instead of a "not found" page: an unknown URL is most
+      // likely an outdated bookmark, and the diary is the useful place to land
       { path: '*', element: <Navigate to={paths.diary} replace /> },
     ],
   },

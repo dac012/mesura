@@ -28,5 +28,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local Claude Code tooling
+# Local Claude Code settings: machine-specific, not part of the project
 .claude/

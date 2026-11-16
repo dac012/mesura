@@ -2,8 +2,8 @@ import { Outlet } from 'react-router'
 import styles from './AppLayout.module.css'
 import { NavBar } from './NavBar'
 
-// App shell shared by every screen: the navigation menu plus the page
-// that matches the current URL, which React Router renders in <Outlet />.
+// Pages render inside this shell (through <Outlet />) instead of each page
+// including the menu itself, so the menu isn't rebuilt on every navigation.
 export function AppLayout() {
   return (
     <div className={styles.layout}>

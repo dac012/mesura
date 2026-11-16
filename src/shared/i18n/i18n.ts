@@ -21,10 +21,12 @@ void i18n.use(initReactI18next).init({
   resources,
   lng: defaultLanguage,
   fallbackLng: defaultLanguage,
-  // Translations are ready before the first render
+  // Translations are bundled, so there is nothing to wait for: starting
+  // synchronously avoids a first render without texts
   initAsync: false,
   interpolation: {
-    // React already escapes values, so i18next doesn't need to
+    // React already escapes values; escaping twice would show things
+    // like "&amp;" on screen
     escapeValue: false,
   },
 })
