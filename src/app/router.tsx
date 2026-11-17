@@ -31,4 +31,8 @@ export const routes: RouteObject[] = [
 // Browser URLs (/foods) instead of hash URLs (/#/foods) look cleaner, but
 // the static host (GitHub Pages) must then serve index.html for any path,
 // or reloading on /foods returns a 404.
-export const router = createBrowserRouter(routes)
+// basename comes from Vite's base setting, so routes match both in development
+// ("/") and on GitHub Pages ("/mesura/") without listing the prefix twice.
+export const router = createBrowserRouter(routes, {
+  basename: import.meta.env.BASE_URL,
+})
