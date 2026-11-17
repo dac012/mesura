@@ -4,6 +4,8 @@ Mindful calorie and nutrition tracking — a progressive web app that works on m
 
 > 🚧 Work in progress.
 
+**Live app:** https://dac012.github.io/mesura/ — deployed automatically from `main` with GitHub Actions.
+
 ## Tech stack
 
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
