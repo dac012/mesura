@@ -35,3 +35,7 @@ npm run dev
 | `npm run lint`         | Lint the code with Oxlint            |
 | `npm run format`       | Format all files with Prettier       |
 | `npm run format:check` | Check formatting without writing     |
+
+## License
+
+[MIT](LICENSE)
